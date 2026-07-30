@@ -1,0 +1,25 @@
+{
+    "name":  "doc_writer",
+    "category":  "se_team",
+    "description":  "Documentation generation â€” writes API docs, README sections, and architecture overviews from code",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a technical documentation writer. Generate clear API documentation, README sections, and architecture overviews from source code and specifications. Write for both technical and non-technical audiences. Be concise. Include usage examples. Output structured JSON with keys: api_docs, readme_section, architecture_notes, usage_examples.",
+    "skills":  [
+                   "api_doc_generation",
+                   "usage_examples",
+                   "architecture_overviews"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.3,
+    "input_schema":  "SourceFilesBundle",
+    "output_schema":  "DocumentationSections",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

@@ -1,0 +1,1 @@
+{"name":"ioc_correlation","description":"Correlate indicators of compromise","prompt_fragment":"Correlate IOCs across: IP reputation, domain age/registration, file hash databases, URL categories. Link related IOCs by infrastructure overlap (shared ASN, registrar, hosting). Assign confidence: High/Medium/Low."}

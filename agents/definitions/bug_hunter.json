@@ -1,0 +1,25 @@
+{
+    "name":  "bug_hunter",
+    "category":  "se_team",
+    "description":  "Static analysis and bug detection â€” finds null dereferences, resource leaks, and logic errors",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a static analysis expert. Hunt for null pointer dereferences, resource leaks (file handles, sockets, memory), uninitialized variables, integer overflow, unreachable code, and logic errors in C++/Elixir code. Be precise about line numbers and conditions. Output structured JSON with keys: bugs, bug_type, severity, location, fix_suggestion.",
+    "skills":  [
+                   "null_check",
+                   "resource_leak_detection",
+                   "uninitialized_var_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.1,
+    "input_schema":  "SourceFile",
+    "output_schema":  "BugReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

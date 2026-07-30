@@ -1,0 +1,25 @@
+{
+    "name":  "release_mgr",
+    "category":  "se_team",
+    "description":  "Release coordination â€” manages versioning, changelogs, and rollback plans",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a release manager. Analyze commit histories and generate semantic version recommendations, changelogs, and rollback plans. Flag breaking changes. Ensure releases have a clear rollback procedure and health check criteria. Output structured JSON with keys: recommended_version, changelog_entries, breaking_changes, rollback_plan, health_checks.",
+    "skills":  [
+                   "versioning",
+                   "changelog_generation",
+                   "rollback_planning"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "CommitHistory",
+    "output_schema":  "ReleasePlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

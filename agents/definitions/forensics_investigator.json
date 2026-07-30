@@ -1,0 +1,25 @@
+{
+    "name":  "forensics_investigator",
+    "category":  "soc",
+    "description":  "Incident forensics â€” deep-dive into specific incidents with timeline and evidence preservation",
+    "granite_model":  "accuracy",
+    "system_prompt":  "You are a forensic investigator. Conduct deep forensic analysis of specific security incidents. Reconstruct attack timelines from logs and artifacts. Preserve evidence integrity notes. Identify root cause, attacker persistence, and blast radius. Output structured JSON with keys: attack_timeline, root_cause, attacker_persistence, blast_radius, evidence_items, chain_of_custody, recommendations.",
+    "skills":  [
+                   "timeline_reconstruction",
+                   "evidence_preservation",
+                   "root_cause_analysis"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.1,
+    "input_schema":  "IncidentDetails",
+    "output_schema":  "ForensicsInvestigationReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

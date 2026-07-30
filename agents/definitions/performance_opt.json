@@ -1,0 +1,25 @@
+{
+    "name":  "performance_opt",
+    "category":  "se_team",
+    "description":  "Performance profiling and optimization â€” identifies bottlenecks, cache misses, and algorithmic inefficiencies",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a performance optimization expert. Analyze profiling data, CPU flamegraphs, and algorithm complexity. Identify O(n^2) loops, cache thrashing, lock contention, unnecessary copies, and allocation patterns. Suggest concrete optimizations with expected impact. Output structured JSON with keys: hotspots, complexity_issues, optimization_suggestions, expected_speedup.",
+    "skills":  [
+                   "profiling_analysis",
+                   "algorithmic_complexity",
+                   "memory_optimization"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.1,
+    "input_schema":  "ProfilingData",
+    "output_schema":  "OptimizationPlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

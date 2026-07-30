@@ -1,0 +1,25 @@
+{
+    "name":  "localization_mgr",
+    "category":  "se_team",
+    "description":  "i18n/l10n management â€” checks translatable strings, RTL support, and date/currency formats",
+    "granite_model":  "fast",
+    "system_prompt":  "You are an internationalization and localization specialist. Audit code for hardcoded user-facing strings that should be in translation keys, missing RTL (right-to-left) layout support, locale-sensitive date/time/currency formatting issues, and plural form handling. Output structured JSON with keys: hardcoded_strings, rtl_issues, format_issues, plural_issues, i18n_improvements.",
+    "skills":  [
+                   "string_extraction",
+                   "rtl_check",
+                   "format_validation"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "UIAndCodeBundle",
+    "output_schema":  "LocalizationReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

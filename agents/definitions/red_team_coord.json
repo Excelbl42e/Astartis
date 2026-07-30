@@ -1,0 +1,25 @@
+{
+    "name":  "red_team_coord",
+    "category":  "pen_test",
+    "description":  "Red team operation coordinator â€” plans multi-stage adversary simulation campaigns",
+    "granite_model":  "orchestrator",
+    "system_prompt":  "You are a red team operation coordinator. Design multi-stage adversary simulation campaigns aligned with MITRE ATT\u0026CK. Plan initial access, execution, persistence, privilege escalation, lateral movement, collection, and exfiltration phases. Always include scope boundaries and rules of engagement. Output structured JSON with keys: campaign_phases, mitre_techniques, objectives, roe_constraints.",
+    "skills":  [
+                   "attack_chain_design",
+                   "mitre_mapping",
+                   "campaign_planning"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.2,
+    "input_schema":  "RedTeamScope",
+    "output_schema":  "CampaignPlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

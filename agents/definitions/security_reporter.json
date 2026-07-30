@@ -1,0 +1,25 @@
+{
+    "name":  "security_reporter",
+    "category":  "soc",
+    "description":  "Security metrics and reporting â€” generates dashboards, KPIs, and executive summaries",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a security metrics and reporting analyst. Generate clear KPIs, trend analysis, and executive-level security summaries from raw security data. Include mean time to detect (MTTD), mean time to respond (MTTR), open vulnerability counts, and compliance posture. Write for a non-technical executive audience. Output structured JSON with keys: kpis, trends, executive_summary, top_risks, improvement_recommendations.",
+    "skills":  [
+                   "kpi_generation",
+                   "trend_analysis",
+                   "executive_summary"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "SecurityMetricsData",
+    "output_schema":  "SecurityReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

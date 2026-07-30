@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astartis SOC — Threat Intelligence Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- astartis-token injected here by DashboardServer -->
+</head>
+<body>
+  <!-- ═══════════════════════ SIDEBAR ═══════════════════════ -->
+  <nav class="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar__logo" title="Astartis SOC">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="4" fill="#0f62fe"/>
+        <path d="M7 21L14 7L21 21" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="9.5" y1="17" x2="18.5" y2="17" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <ul class="sidebar__nav">
+      <li class="sidebar__item sidebar__item--active" data-tab="overview"    title="Overview">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 2h7v7H2V2zm9 0h7v7h-7V2zm0 9h7v7h-7v-7zM2 11h7v7H2v-7z"/></svg>
+        <span class="sidebar__label">HOME</span>
+      </li>
+      <li class="sidebar__item" data-tab="terminal" title="Terminal">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 4h16v12H2V4zm2 2v8h12V6H4zm1.293 2.293L7 9.586 5.707 10.879 4 9.172l1.293-2.879zM8 12h6v1H8v-1z"/></svg>
+        <span class="sidebar__label">TERM</span>
+      </li>
+      <li class="sidebar__item" data-tab="network"  title="Network Sensor">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4zm0 2a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
+        <span class="sidebar__label">NET</span>
+      </li>
+      <li class="sidebar__item" data-tab="agents"   title="Agent Fleet">
+        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="7" r="3"/><path d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6H4z"/></svg>
+        <span class="sidebar__label">AGT</span>
+      </li>
+      <li class="sidebar__item" data-tab="sandbox"  title="Sandbox">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 3h14v14H3V3zm2 2v10h10V5H5zm2 2h6v2H7V7zm0 4h6v2H7v-2z"/></svg>
+        <span class="sidebar__label">SBOX</span>
+      </li>
+      <li class="sidebar__item" data-tab="nac"      title="NAC &amp; Zero Trust">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l7 4v5c0 4-3 7-7 8-4-1-7-4-7-8V6l7-4z"/></svg>
+        <span class="sidebar__label">NAC</span>
+      </li>
+      <li class="sidebar__item" data-tab="evidence" title="Evidence &amp; Audit">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M5 3h10a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1zm1 2v10h8V5H6zm1 2h6v1H7V7zm0 3h6v1H7v-1zm0 3h4v1H7v-1z"/></svg>
+        <span class="sidebar__label">AUD</span>
+      </li>
+      <li class="sidebar__item" data-tab="attack"   title="MITRE ATT&amp;CK">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2 5h5l-4 3 1.5 5L10 12l-4.5 3L7 10 3 7h5z"/></svg>
+        <span class="sidebar__label">ATK</span>
+      </li>
+      <li class="sidebar__item" data-tab="defend"   title="MITRE D3FEND">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l7 4v5c0 4-3 7-7 8-4-1-7-4-7-8V6l7-4z"/><path fill="none" stroke="#fff" stroke-width="1.2" d="M7 10l2 2 4-4"/></svg>
+        <span class="sidebar__label">D3F</span>
+      </li>
+      <li class="sidebar__item" data-tab="nist"     title="NIST 800-53 / Zero Trust">
+        <svg viewBox="0 0 20 20" fill="currentColor"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/></svg>
+        <span class="sidebar__label">NIST</span>
+      </li>
+      <li class="sidebar__item" data-tab="dot1x"    title="802.1X NAC Workflow">
+        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="4" cy="10" r="2"/><circle cx="10" cy="10" r="2"/><circle cx="16" cy="10" r="2"/><path d="M6 10h2m4 0h2" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="sidebar__label">1X</span>
+      </li>
+      <li class="sidebar__item sidebar__item--bottom" data-tab="configure" title="Configure">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4zm6.121-2.586l1.19-1.19-1.414-1.414-1.19 1.19A5.978 5.978 0 0013 7.07V5.5h-2v1.57a5.978 5.978 0 00-1.707.93L8.103 6.81 6.69 8.224l1.19 1.19A5.978 5.978 0 007.07 11H5.5v2h1.57c.19.62.49 1.19.93 1.707l-1.19 1.19 1.414 1.414 1.19-1.19A5.978 5.978 0 0011 16.93V18.5h2v-1.57a5.978 5.978 0 001.707-.93l1.19 1.19 1.414-1.414-1.19-1.19A5.978 5.978 0 0016.93 13H18.5v-2h-1.57a5.978 5.978 0 00-.809-1.586z"/></svg>
+        <span class="sidebar__label">CFG</span>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════ MAIN CONTENT ═══════════════════════ -->
+  <div class="layout">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar__brand">
+        <span class="topbar__product">Astartis</span>
+        <span class="topbar__subtitle">Threat Intelligence Platform</span>
+      </div>
+      <div class="topbar__status" id="topbar-status">
+        <span class="pill pill--neutral" id="pill-agents">– agents</span>
+        <span class="pill pill--neutral" id="pill-telemetry">telemetry –</span>
+        <span class="pill pill--neutral" id="pill-evidence">evidence –</span>
+        <span class="pill pill--neutral" id="pill-threat">THREAT –</span>
+        <span class="pill pill--neutral" id="pill-clock">--:--:-- UTC</span>
+        <span class="pill pill--neutral" id="pill-worm">WORM –</span>
+        <!-- TERRA Part 5: backend connectivity indicator -->
+        <span class="pill pill--neutral" id="pill-backend" title="Backend connection status">BACKEND –</span>
+      </div>
+    </header>
+
+    <!-- TERRA Part 5: stale data banner (hidden until a poll failure occurs) -->
+    <div id="stale-banner" style="display:none; background:#fffbec; border-bottom:2px solid #f59e0b;
+         padding:6px 16px; font-size:12px; color:#92400e; font-weight:600;">
+      ⚠ DATA STALE — Last successful poll: <span id="stale-ts">–</span>
+      &nbsp;|&nbsp; Backend may be down. Charts show last known values.
+    </div>
+
+    <!-- TAB: OVERVIEW ─────────────────────────────────────────── -->
+    <main class="content" id="tab-overview">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Security Operations Center</h1>
+          <p class="page-sub">Real-time threat detection · v3.2.0</p>
+        </div>
+        <span class="posture-badge" id="posture-badge">NOMINAL</span>
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="kpi-row" id="kpi-row">
+        <div class="kpi-card" id="kpi-agents">
+          <div class="kpi-card__label">Active Agents</div>
+          <div class="kpi-card__value" id="kv-agents">–</div>
+          <div class="kpi-card__sub" id="ks-agents">loading…</div>
+        </div>
+        <div class="kpi-card" id="kpi-threat">
+          <div class="kpi-card__label">Threat Level</div>
+          <div class="kpi-card__value" id="kv-threat">–</div>
+          <div class="kpi-card__sub" id="ks-threat">–</div>
+        </div>
+        <div class="kpi-card" id="kpi-chaos">
+          <div class="kpi-card__label">Chaos Score K</div>
+          <div class="kpi-card__value mono" id="kv-chaos">–</div>
+          <div class="kpi-card__sub" id="ks-chaos">–</div>
+        </div>
+        <div class="kpi-card" id="kpi-alerts">
+          <div class="kpi-card__label">Alerts (24h)</div>
+          <div class="kpi-card__value" id="kv-alerts">–</div>
+          <div class="kpi-card__sub" id="ks-alerts">– critical</div>
+        </div>
+        <div class="kpi-card" id="kpi-chain">
+          <div class="kpi-card__label">Audit Chain</div>
+          <div class="kpi-card__value" id="kv-chain">–</div>
+          <div class="kpi-card__sub" id="ks-chain">–</div>
+        </div>
+        <div class="kpi-card" id="kpi-worm">
+          <div class="kpi-card__label">WORM State</div>
+          <div class="kpi-card__value" id="kv-worm">–</div>
+          <div class="kpi-card__sub" id="ks-worm">–</div>
+        </div>
+      </div>
+
+      <!-- 2×2 PANEL GRID -->
+      <div class="panel-grid">
+        <div class="panel">
+          <div class="panel__header">
+            <span class="panel__title">Chaos K — Lyapunov History</span>
+            <span class="panel__badge" id="chaos-badge">–</span>
+          </div>
+          <canvas id="chart-chaos" height="120"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel__header">
+            <span class="panel__title">System Metrics</span>
+          </div>
+          <div class="metric-stack" id="metric-stack">
+            <div class="metric-bar-row">
+              <span class="metric-bar-label">CPU</span>
+              <div class="metric-bar-track"><div class="metric-bar-fill" id="bar-cpu"></div></div>
+              <span class="metric-bar-pct mono" id="pct-cpu">–%</span>
+              <span class="metric-bar-detail muted" id="detail-cpu"></span>
+            </div>
+            <div class="metric-bar-row">
+              <span class="metric-bar-label">MEM</span>
+              <div class="metric-bar-track"><div class="metric-bar-fill" id="bar-mem"></div></div>
+              <span class="metric-bar-pct mono" id="pct-mem">–%</span>
+              <span class="metric-bar-detail muted" id="detail-mem"></span>
+            </div>
+            <div class="metric-bar-row">
+              <span class="metric-bar-label">DISK</span>
+              <div class="metric-bar-track"><div class="metric-bar-fill" id="bar-disk"></div></div>
+              <span class="metric-bar-pct mono" id="pct-disk">–%</span>
+              <span class="metric-bar-detail muted" id="detail-disk"></span>
+            </div>
+            <canvas id="chart-cpu" height="60" style="margin-top:12px"></canvas>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__header">
+            <span class="panel__title">Recent Alerts</span>
+            <span class="panel__badge panel__badge--muted" id="alerts-count">–</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="tbl-alerts">
+              <thead><tr><th>Severity</th><th>Agent</th><th>Message</th><th>Time</th></tr></thead>
+              <tbody id="tbody-alerts"><tr><td colspan="4" class="tbl-empty">Loading…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__header">
+            <span class="panel__title">Firewall Blocks</span>
+            <span class="panel__badge panel__badge--muted" id="fw-count">–</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="tbl-fw">
+              <thead><tr><th>IP</th><th>Rule</th><th>Expires</th></tr></thead>
+              <tbody id="tbody-fw"><tr><td colspan="3" class="tbl-empty">None</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERRA Part 3: Dependency / Framework Status Panel -->
+      <div class="panel" id="dep-panel" style="margin-top:16px">
+        <div class="panel__header">
+          <span class="panel__title">Dependencies &amp; Framework Status</span>
+          <span class="panel__badge panel__badge--muted" id="dep-verified-at">–</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="tbl-deps">
+            <thead>
+              <tr>
+                <th>Dependency</th>
+                <th>Version</th>
+                <th>Status</th>
+                <th>Last Verified</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-deps">
+              <tr><td colspan="4" class="tbl-empty">Waiting for first poll…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TERMINAL STATUS STRIP -->
+      <div class="status-strip" id="status-strip">
+        <div class="status-strip__item">
+          <span class="dot dot--ok" id="dot-ollama"></span><span>Ollama</span>
+        </div>
+        <div class="status-strip__item">
+          <span class="dot dot--ok" id="dot-npcap"></span><span>Npcap</span>
+        </div>
+        <div class="status-strip__item">
+          <span class="dot dot--ok" id="dot-clamd"></span><span>ClamD</span>
+        </div>
+        <div class="status-strip__item">
+          <span class="dot dot--ok" id="dot-admin"></span><span>Elevated</span>
+        </div>
+        <div class="status-strip__item mono" id="strip-cpu">CPU –%</div>
+        <div class="status-strip__item mono" id="strip-mem">MEM –%</div>
+        <div class="status-strip__item mono" id="strip-disk">DISK –%</div>
+        <div class="status-strip__spacer"></div>
+        <div class="status-strip__item mono muted" id="strip-ts">–</div>
+      </div>
+    </main>
+
+    <!-- TAB: TERMINAL ──────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-terminal">
+      <div class="page-header">
+        <div><h1 class="page-title">Terminal</h1><p class="page-sub">Whitelisted diagnostic commands</p></div>
+      </div>
+      <div class="terminal-wrap">
+        <div class="terminal-output" id="term-output"><span class="term-prompt">Astartis Terminal — type a command below</span></div>
+        <div class="terminal-input-row">
+          <span class="term-ps">astartis&gt;</span>
+          <input class="terminal-input" id="term-input" type="text" placeholder="hostname · ipconfig · tasklist · netstat -an · ver" autocomplete="off" spellcheck="false">
+          <button class="btn btn--primary" id="term-run">Run</button>
+          <button class="btn btn--ghost" id="term-clear">Clear</button>
+        </div>
+        <div class="term-hint muted">Allowed: ipconfig · tasklist · netstat · systeminfo · hostname · ver · arp · route · ping &lt;host&gt; · whoami · getmac · tracert · wmic · netsh · Get-* (PS) · <strong>help</strong> for full list</div>
+      </div>
+    </main>
+
+    <!-- TAB: NETWORK ───────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-network">
+      <div class="page-header">
+        <div><h1 class="page-title">Network Sensor</h1><p class="page-sub">Packet entropy · chaos windows</p></div>
+        <!-- TERRA Part 4: Npcap real verification trigger -->
+        <button class="btn btn--primary" id="btn-npcap-verify" title="Run a real Npcap live capture — triggers a Windows UAC elevation prompt every time">
+          ⚡ Verify Npcap (Live Capture)
+        </button>
+      </div>
+
+      <!-- TERRA Part 4: Npcap verification result panel -->
+      <div class="panel" id="npcap-result-panel" style="margin-bottom:16px">
+        <div class="panel__header">
+          <span class="panel__title">Npcap Verification Result</span>
+          <span class="panel__badge" id="npcap-result-badge">Not run</span>
+        </div>
+        <div id="npcap-result-body" style="padding:10px 16px; font-size:13px; color:#57606a;">
+          Click "Verify Npcap (Live Capture)" to run a real packet capture.
+          A Windows UAC elevation prompt will appear every time — this confirms
+          Npcap executed at the OS level.
+        </div>
+      </div>
+
+      <div class="panel-grid panel-grid--single">
+        <div class="panel">
+          <div class="panel__header"><span class="panel__title">Packet Entropy Windows</span></div>
+          <canvas id="chart-entropy" height="140"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel__header"><span class="panel__title">Entropy Window Detail</span></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Window</th><th>Mean Entropy (bits)</th><th>Max</th><th>Anomalous</th></tr></thead>
+              <tbody id="tbody-entropy"><tr><td colspan="4" class="tbl-empty">Loading…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: AGENTS ────────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-agents">
+      <div class="page-header">
+        <div><h1 class="page-title">Agent Fleet</h1><p class="page-sub">IBM Granite-backed agent swarm</p></div>
+        <span class="pill pill--neutral" id="agent-pill">– loaded</span>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><span class="panel__title">All Agents</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Tier</th><th>Status</th><th>Tasks</th><th>Last Active</th></tr></thead>
+            <tbody id="tbody-agents"><tr><td colspan="5" class="tbl-empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: SANDBOX ───────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-sandbox">
+      <div class="page-header">
+        <div><h1 class="page-title">Sandbox</h1><p class="page-sub">WORM-protected file system</p></div>
+        <button class="btn btn--ghost" id="btn-plant-decoys">Plant Decoys</button>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><span class="panel__title">Sandbox File Tree</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Path</th><th>Type</th><th>Version</th><th>Locked</th></tr></thead>
+            <tbody id="tbody-sandbox"><tr><td colspan="4" class="tbl-empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: NAC ───────────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-nac">
+      <div class="page-header">
+        <div><h1 class="page-title">NAC &amp; Zero Trust</h1><p class="page-sub">Network access control decisions</p></div>
+        <button class="btn btn--ghost" id="btn-sim-nac">Simulate Device Connect</button>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><span class="panel__title">Zero Trust Decisions</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>User</th><th>Resource</th><th>Trust Score</th><th>Decision</th></tr></thead>
+            <tbody id="tbody-zt"><tr><td colspan="4" class="tbl-empty">No decisions yet</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: EVIDENCE ──────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-evidence">
+      <div class="page-header">
+        <div><h1 class="page-title">Evidence &amp; Audit</h1><p class="page-sub">WORM-immutable audit chain</p></div>
+      </div>
+      <div class="panel">
+        <div class="panel__header"><span class="panel__title">Audit Chain Entries</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Entry ID</th><th>Event</th><th>Timestamp</th><th>Chain</th></tr></thead>
+            <tbody id="tbody-audit"><tr><td colspan="4" class="tbl-empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <div class="panel__header"><span class="panel__title">Quarantine</span></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Entry ID</th><th>Virus</th><th>Quarantined At</th></tr></thead>
+            <tbody id="tbody-qtn"><tr><td colspan="3" class="tbl-empty">None</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: MITRE ATT&CK ──────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-attack">
+      <div class="page-header">
+        <div><h1 class="page-title">MITRE ATT&amp;CK</h1><p class="page-sub">Technique detection from decoy interactions · OMIDAX attribution engine</p></div>
+        <span class="pill pill--neutral" id="attack-technique-count">– techniques</span>
+      </div>
+
+      <!-- KPI row -->
+      <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px">
+        <div class="kpi-card" id="atk-kpi-hits">
+          <div class="kpi-card__label">Total Hits</div>
+          <div class="kpi-card__value" id="atk-kv-hits">–</div>
+          <div class="kpi-card__sub">decoy interactions</div>
+        </div>
+        <div class="kpi-card" id="atk-kpi-techniques">
+          <div class="kpi-card__label">Techniques Fired</div>
+          <div class="kpi-card__value" id="atk-kv-techniques">–</div>
+          <div class="kpi-card__sub">distinct ATT&amp;CK IDs</div>
+        </div>
+        <div class="kpi-card" id="atk-kpi-tactics">
+          <div class="kpi-card__label">Tactics Covered</div>
+          <div class="kpi-card__value" id="atk-kv-tactics">–</div>
+          <div class="kpi-card__sub">MITRE tactic phases</div>
+        </div>
+        <div class="kpi-card" id="atk-kpi-attackers">
+          <div class="kpi-card__label">Unique Actors</div>
+          <div class="kpi-card__value" id="atk-kv-attackers">–</div>
+          <div class="kpi-card__sub">attacker tags seen</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- Technique frequency bar chart (SVG) -->
+        <div class="panel" style="grid-column:span 2">
+          <div class="panel__header">
+            <span class="panel__title">Technique Frequency</span>
+            <span class="panel__badge panel__badge--muted" id="atk-bar-sub">last 100 events</span>
+          </div>
+          <div id="atk-bar-chart" style="padding:12px 16px 8px;min-height:200px">
+            <svg id="atk-bar-svg" width="100%" height="220" style="display:block"></svg>
+          </div>
+        </div>
+
+        <!-- Tactic coverage heatmap grid -->
+        <div class="panel">
+          <div class="panel__header">
+            <span class="panel__title">Tactic Coverage Grid</span>
+          </div>
+          <div id="atk-grid" style="padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start"></div>
+        </div>
+      </div>
+
+      <!-- Technique detail table -->
+      <div class="panel" style="margin-top:16px">
+        <div class="panel__header">
+          <span class="panel__title">Detected Techniques</span>
+          <span class="panel__badge panel__badge--muted" id="atk-tbl-count">–</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>ID</th><th>Technique</th><th>Tactic</th><th>Hits</th><th>Confidence</th><th>Last Seen</th></tr></thead>
+            <tbody id="tbody-attack"><tr><td colspan="6" class="tbl-empty">Waiting for decoy events…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: MITRE D3FEND ──────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-defend">
+      <div class="page-header">
+        <div><h1 class="page-title">MITRE D3FEND</h1><p class="page-sub">OMIDAX 5-layer defensive posture · live subsystem mapping</p></div>
+        <span class="pill pill--neutral" id="defend-active-count">– active layers</span>
+      </div>
+
+      <!-- 5-layer cards -->
+      <div id="d3f-layers" style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:16px"></div>
+
+      <!-- Defensive technique coverage table -->
+      <div class="panel">
+        <div class="panel__header">
+          <span class="panel__title">D3FEND Technique Coverage</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Layer</th><th>D3FEND ID</th><th>Technique</th><th>Subsystem</th><th>Status</th></tr></thead>
+            <tbody id="tbody-defend"><tr><td colspan="5" class="tbl-empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: NIST 800-53 / ZERO TRUST ─────────────────────────── -->
+    <main class="content content--hidden" id="tab-nist">
+      <div class="page-header">
+        <div><h1 class="page-title">NIST 800-53 / Zero Trust</h1><p class="page-sub">Live ZT policy engine · control family coverage</p></div>
+        <span class="pill pill--neutral" id="nist-decision-count">– decisions</span>
+      </div>
+
+      <!-- ZT outcome KPIs -->
+      <div class="kpi-row" style="grid-template-columns:repeat(5,1fr);margin-bottom:16px">
+        <div class="kpi-card" id="zt-kpi-allow">
+          <div class="kpi-card__label">ALLOW FULL</div>
+          <div class="kpi-card__value kpi-card--ok" id="zt-kv-allow">–</div>
+          <div class="kpi-card__sub">high trust</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__label">ALLOW LIMITED</div>
+          <div class="kpi-card__value" id="zt-kv-limited">–</div>
+          <div class="kpi-card__sub">restricted scope</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__label">MFA REQUIRED</div>
+          <div class="kpi-card__value" id="zt-kv-mfa">–</div>
+          <div class="kpi-card__sub">step-up auth</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card__label">QUARANTINE</div>
+          <div class="kpi-card__value" id="zt-kv-qtn">–</div>
+          <div class="kpi-card__sub">isolated</div>
+        </div>
+        <div class="kpi-card" id="zt-kpi-deny">
+          <div class="kpi-card__label">DENY</div>
+          <div class="kpi-card__value" id="zt-kv-deny">–</div>
+          <div class="kpi-card__sub">blocked</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <!-- ZT decision donut chart (SVG) -->
+        <div class="panel">
+          <div class="panel__header"><span class="panel__title">Decision Distribution</span></div>
+          <div style="padding:16px;display:flex;justify-content:center">
+            <svg id="zt-donut-svg" width="220" height="220" viewBox="0 0 220 220"></svg>
+          </div>
+          <div id="zt-donut-legend" style="padding:0 16px 12px;display:flex;flex-wrap:wrap;gap:8px"></div>
+        </div>
+
+        <!-- Trust score histogram (SVG) -->
+        <div class="panel">
+          <div class="panel__header"><span class="panel__title">Trust Score Distribution</span></div>
+          <div style="padding:12px 16px">
+            <svg id="zt-hist-svg" width="100%" height="180" style="display:block"></svg>
+          </div>
+          <div class="muted" style="font-size:11px;padding:0 16px 8px">Score buckets: 0–19 · 20–39 · 40–59 · 60–79 · 80–100</div>
+        </div>
+      </div>
+
+      <!-- NIST control family coverage -->
+      <div class="panel" style="margin-top:16px">
+        <div class="panel__header">
+          <span class="panel__title">NIST SP 800-53 Control Family Coverage</span>
+        </div>
+        <div id="nist-controls" style="padding:12px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px"></div>
+      </div>
+
+      <!-- Recent ZT decisions table -->
+      <div class="panel" style="margin-top:16px">
+        <div class="panel__header">
+          <span class="panel__title">Recent Zero Trust Decisions</span>
+          <span class="panel__badge panel__badge--muted" id="nist-zt-count">–</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>User / Device</th><th>Resource</th><th>Trust Score</th><th>Decision</th><th>Time</th></tr></thead>
+            <tbody id="tbody-nist-zt"><tr><td colspan="5" class="tbl-empty">No decisions yet</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: 802.1X NAC WORKFLOW ───────────────────────────────── -->
+    <main class="content content--hidden" id="tab-dot1x">
+      <div class="page-header">
+        <div><h1 class="page-title">802.1X NAC Workflow</h1><p class="page-sub">8-step device admission pipeline · eGov network</p></div>
+        <button class="btn btn--primary" id="btn-dot1x-sim">▶ Run Simulation</button>
+      </div>
+
+      <!-- 8-step pipeline stepper -->
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel__header">
+          <span class="panel__title">Admission Pipeline</span>
+          <span class="panel__badge" id="dot1x-pipeline-status">Idle</span>
+        </div>
+        <div id="dot1x-stepper" style="padding:16px;overflow-x:auto">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Last simulation result detail -->
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel__header">
+          <span class="panel__title">Last Simulation Detail</span>
+          <span class="panel__badge panel__badge--muted" id="dot1x-last-ts">–</span>
+        </div>
+        <div id="dot1x-result" style="padding:12px 16px;font-size:13px;color:var(--text-secondary)">
+          Click <strong>Run Simulation</strong> to trigger a full 8-step NAC evaluation.
+        </div>
+      </div>
+
+      <!-- Admission history table -->
+      <div class="panel">
+        <div class="panel__header">
+          <span class="panel__title">Admission History</span>
+          <span class="panel__badge panel__badge--muted" id="dot1x-history-count">–</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Device</th><th>MAC</th><th>SSID</th><th>Final Decision</th><th>Time</th></tr></thead>
+            <tbody id="tbody-dot1x"><tr><td colspan="5" class="tbl-empty">No admissions yet</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: CONFIGURE ─────────────────────────────────────────── -->
+    <main class="content content--hidden" id="tab-configure">
+      <div class="page-header">
+        <div><h1 class="page-title">Configure</h1><p class="page-sub">Runtime settings — changes take effect immediately</p></div>
+      </div>
+      <div id="cfg-container"><!-- populated by script.js --></div>
+    </main>
+  </div>
+
+  <!-- MODAL BACKDROP -->
+  <div id="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200"></div>
+  <div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+       background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:24px 28px;
+       min-width:340px;max-width:600px;z-index:201">
+    <div id="modal-title" style="font-weight:700;font-size:15px;margin-bottom:12px"></div>
+    <div id="modal-body"></div>
+    <div style="margin-top:16px;text-align:right">
+      <button class="btn btn--ghost" id="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

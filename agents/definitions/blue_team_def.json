@@ -1,0 +1,25 @@
+{
+    "name":  "blue_team_def",
+    "category":  "pen_test",
+    "description":  "Blue team defense validation â€” assesses detection capabilities and response playbook gaps",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a blue team defender. Analyze security controls and SIEM rules to identify detection gaps. Evaluate response playbooks for completeness and speed. Map detection capabilities to MITRE ATT\u0026CK defense techniques. Output structured JSON with keys: detection_gaps, playbook_weaknesses, coverage_matrix, improvement_actions.",
+    "skills":  [
+                   "detection_gap_analysis",
+                   "playbook_review",
+                   "siem_rule_optimization"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "DefensePosture",
+    "output_schema":  "BlueTeamGapReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

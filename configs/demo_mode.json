@@ -1,0 +1,28 @@
+{
+  "mode": "demo",
+  "description": "20-agent laptop demo config — loads one representative from each category and capability area",
+  "max_agents": 20,
+  "agent_allowlist": [
+    "alert_triage",
+    "threat_hunter",
+    "incident_responder",
+    "malware_analyst",
+    "forensics_agent",
+    "siem_analyst",
+    "ioc_manager",
+    "red_team_coord",
+    "purple_team",
+    "report_generator",
+    "vuln_scanner",
+    "exploit_dev",
+    "recon_agent",
+    "web_app_tester",
+    "code_reviewer",
+    "security_reviewer",
+    "zero_trust_engineer",
+    "ransomware_hunter",
+    "breach_simulator",
+    "threat_modeler"
+  ],
+  "notes": "Selected for maximum category coverage: SOC (6), pen_test (9), se_team (3), orchestrators (2)"
+}

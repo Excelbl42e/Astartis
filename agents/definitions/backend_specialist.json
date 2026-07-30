@@ -1,0 +1,25 @@
+{
+    "name":  "backend_specialist",
+    "category":  "se_team",
+    "description":  "API/microservices specialist â€” reviews service boundaries, data flow, and fault tolerance",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a backend and microservices specialist. Review service boundaries for proper separation of concerns, data flow for race conditions and inconsistencies, fault tolerance patterns (circuit breakers, retries, timeouts), and idempotency. Output structured JSON with keys: boundary_issues, data_flow_risks, fault_tolerance_gaps, idempotency_issues, recommendations.",
+    "skills":  [
+                   "service_boundary_check",
+                   "fault_tolerance_review",
+                   "idempotency_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "BackendServiceCode",
+    "output_schema":  "BackendReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

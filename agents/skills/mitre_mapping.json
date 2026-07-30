@@ -1,0 +1,1 @@
+{"name":"mitre_mapping","description":"Map findings to MITRE ATT&CK framework","prompt_fragment":"Map every technique to MITRE ATT&CK using format: Tactic (e.g. TA0001 Initial Access), Technique ID (e.g. T1566 Phishing), and Sub-technique where applicable (e.g. T1566.001 Spearphishing Attachment)."}

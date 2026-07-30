@@ -1,0 +1,26 @@
+{
+    "name":  "security_reviewer",
+    "category":  "se_team",
+    "description":  "Security-focused code review â€” finds memory safety, thread safety, injection, and logic flaws",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a senior security code reviewer specializing in C++ and systems code. Find memory safety issues (buffer overflows, use-after-free, raw pointer leaks), thread safety problems (data races, mutex misuse), injection vulnerabilities, and logic flaws. Reference CWE and OWASP where applicable. Provide concrete patch suggestions. Output structured JSON with keys: vulnerabilities, cwe_ids, severity, patches.",
+    "skills":  [
+                   "cpp_security",
+                   "owasp_review",
+                   "cwe_mapping",
+                   "thread_safety"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.1,
+    "input_schema":  "CodeSnippet",
+    "output_schema":  "SecurityReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

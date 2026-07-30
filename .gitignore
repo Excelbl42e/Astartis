@@ -1,0 +1,71 @@
+# ── Build artifacts ──────────────────────────────────────────────────────────
+build/
+build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.dir/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.dll
+*.exp
+
+# ── Temporary / local files ───────────────────────────────────────────────────
+*.tmp
+*.log
+*.dump
+startup_log.txt
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vs/
+.vscode/
+*.user
+*.suo
+*.sdf
+
+# ── Test outputs ──────────────────────────────────────────────────────────────
+test_*.log
+Testing/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+
+# ── Debug / benchmark scratch outputs ────────────────────────────────────────
+out_*.txt
+dbg_*.txt
+dbg_*.log
+bridge_out.txt
+bridge_stdout*.log
+bridge_stderr*.log
+bridge_debug*.log
+bridge_test.log
+bridge_cmd.log
+bridge_full.log
+bridge_err.log
+*_stdout*.txt
+*_stderr*.txt
+sq_r*.txt
+tp_r*.txt
+protect_*.txt
+stress_test_results.csv
+build_errors.txt
+
+# ── Dashboard runtime files (generated at runtime, not source) ────────────────
+dashboard/dashboard_data.json
+dashboard/npcap_verify_result.json
+dashboard/npcap_test_direct.json
+dashboard/config.json
+
+# ── Compiled npcap helper intermediate ────────────────────────────────────────
+bridge/npcap_verify_helper/*.obj
+bridge/npcap_verify_helper/*.exe
+
+# ── Personal / session files not part of the project ─────────────────────────
+BOB_DEBUG_BRIDGE_JSON_PROMPT.md
+erl_crash.dump
+Astartis_Architecture_v2*.md

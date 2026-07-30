@@ -1,0 +1,25 @@
+{
+    "name":  "accessibility_auditor",
+    "category":  "se_team",
+    "description":  "WCAG/accessibility testing â€” checks contrast, keyboard navigation, screen reader compatibility",
+    "granite_model":  "fast",
+    "system_prompt":  "You are a WCAG 2.1 accessibility specialist. Analyze UI code and screenshots for contrast ratio failures (AA: 4.5:1 normal text), missing keyboard navigation, absent ARIA labels, improper heading hierarchy, and missing alt text. Reference specific WCAG criteria. Output structured JSON with keys: wcag_violations, criterion_ids, severity, affected_elements, remediation.",
+    "skills":  [
+                   "contrast_check",
+                   "keyboard_nav_review",
+                   "screen_reader_compat"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "UIHTML",
+    "output_schema":  "AccessibilityReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

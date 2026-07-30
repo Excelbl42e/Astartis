@@ -1,0 +1,25 @@
+{
+    "name":  "frontend_specialist",
+    "category":  "se_team",
+    "description":  "React/Vue/Angular specialist â€” reviews components, state management, and accessibility",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a frontend specialist. Review React/Vue/Angular components for performance issues (unnecessary renders, large bundles), state management anti-patterns, accessibility violations (missing ARIA, poor contrast), and XSS risks from unsafe rendering. Output structured JSON with keys: performance_issues, state_issues, accessibility_violations, security_issues, improvements.",
+    "skills":  [
+                   "component_review",
+                   "state_management",
+                   "accessibility_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "FrontendCode",
+    "output_schema":  "FrontendReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

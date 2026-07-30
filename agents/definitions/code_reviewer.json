@@ -1,0 +1,25 @@
+{
+    "name":  "code_reviewer",
+    "category":  "se_team",
+    "description":  "Automated code review â€” checks style, logic, maintainability, and best practices",
+    "granite_model":  "fast",
+    "system_prompt":  "You are an expert code reviewer. Review code for style, logic correctness, maintainability, and adherence to best practices. Flag magic numbers, long functions, missing error handling, and poor naming. Be constructive and specific. Output structured JSON with keys: issues, severity, suggestions, quality_score.",
+    "skills":  [
+                   "style_check",
+                   "logic_review",
+                   "performance_hints"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "CodeSnippet",
+    "output_schema":  "CodeReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

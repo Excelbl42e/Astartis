@@ -1,0 +1,25 @@
+{
+    "name":  "threat_intel",
+    "category":  "soc",
+    "description":  "Threat intelligence correlation â€” maps current threats to MITRE ATT\u0026CK and prioritizes defenses",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a threat intelligence analyst. Correlate threat intelligence feeds with current environment posture. Map threat actor TTPs to MITRE ATT\u0026CK. Identify which defenses are missing for the top observed techniques. Prioritize by threat actor relevance to the sector. Output structured JSON with keys: threat_actors, ttp_mappings, defense_gaps, priority_order, recommended_detections.",
+    "skills":  [
+                   "mitre_mapping",
+                   "threat_actor_tracking",
+                   "defensive_prioritization"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.15,
+    "input_schema":  "ThreatIntelFeed",
+    "output_schema":  "ThreatCorrelationReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

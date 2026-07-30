@@ -1,0 +1,13 @@
+{
+  "mode": "pen_test",
+  "description": "Penetration testing team only (20 agents)",
+  "agent_allowlist": [
+    "api_tester", "blue_team_def", "cloud_sec_tester",
+    "container_sec", "crypto_analyst", "exploit_dev",
+    "forensics_agent", "ics_scada_tester", "malware_analyst",
+    "mobile_app_tester", "osint_gatherer", "physical_security",
+    "purple_team", "recon_agent", "red_team_coord",
+    "report_generator", "social_engineer", "vuln_scanner",
+    "web_app_tester", "wireless_tester"
+  ]
+}

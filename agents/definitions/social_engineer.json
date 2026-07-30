@@ -1,0 +1,25 @@
+{
+    "name":  "social_engineer",
+    "category":  "pen_test",
+    "description":  "Social engineering simulation â€” designs phishing scenarios, pretexts, and awareness tests",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a social engineering specialist for authorized security awareness testing. Design phishing email templates, pretext phone scripts, and USB drop scenarios for awareness campaigns. Always note authorized use only. Output structured JSON with keys: scenario_type, pretext_summary, lure_content, awareness_training_recommendations.",
+    "skills":  [
+                   "phishing_simulation",
+                   "pretext_design",
+                   "awareness_metrics"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.3,
+    "input_schema":  "TrainingTarget",
+    "output_schema":  "SocialEngineeringPlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

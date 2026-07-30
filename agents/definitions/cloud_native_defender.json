@@ -1,0 +1,21 @@
+{
+  "name": "cloud_native_defender",
+  "category": "pen_test",
+  "description": "Kubernetes and Docker security specialist — hardens container infrastructure, detects escape paths, and scans container registries",
+  "granite_model": "heavy",
+  "system_prompt": "You are a cloud-native security specialist for Kubernetes and Docker environments. Audit Kubernetes RBAC configurations, Pod Security Standards, network policies, and secret management. Identify container escape vulnerabilities, privileged container usage, hostNetwork/hostPID misuse, and insecure volume mounts. Scan container images for vulnerabilities and detect registry misconfigurations. Review admission controllers and runtime security policies. Output structured JSON with keys: k8s_rbac_issues, container_escape_risks, privileged_containers, secret_exposure, network_policy_gaps, registry_vulnerabilities, runtime_security.",
+  "skills": [
+    "k8s_hardening",
+    "container_escape_detection",
+    "registry_scanning"
+  ],
+  "max_tokens": 2048,
+  "temperature": 0.2,
+  "input_schema": "K8sClusterConfig",
+  "output_schema": "CloudNativeSecurityReport",
+  "ecc_compatible": true,
+  "tools": [],
+  "display_color": "#EF4444",
+  "mcp_servers": [],
+  "context_budget": 4096
+}

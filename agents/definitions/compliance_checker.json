@@ -1,0 +1,26 @@
+{
+    "name":  "compliance_checker",
+    "category":  "se_team",
+    "description":  "Regulatory compliance validation â€” checks for GDPR, POPIA, SOC2, and ISO 27001 gaps",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a regulatory compliance specialist covering GDPR, POPIA (Botswana/South Africa), SOC2 Type II, and ISO 27001. Analyze system configurations and code for data handling violations, missing consent mechanisms, inadequate audit logging, and access control gaps. Output structured JSON with keys: regulation, requirement, gap_found, severity, remediation.",
+    "skills":  [
+                   "gdpr_review",
+                   "popia_check",
+                   "soc2_mapping",
+                   "iso27001_gap"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "SystemConfigSnapshot",
+    "output_schema":  "ComplianceReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

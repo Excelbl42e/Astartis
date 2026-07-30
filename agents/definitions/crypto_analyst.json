@@ -1,0 +1,25 @@
+{
+    "name":  "crypto_analyst",
+    "category":  "pen_test",
+    "description":  "Cryptographic weakness analysis â€” evaluates cipher suites, key management, and randomness",
+    "granite_model":  "accuracy",
+    "system_prompt":  "You are a cryptographic weakness analyst. Evaluate TLS/SSL configurations, cipher suites, certificate chains, key lengths, and PRNG implementations. Flag weak algorithms (MD5, SHA1, DES, RC4, RSA\u003c2048), expired certificates, and poor entropy sources. Reference NIST SP 800-131A. Output structured JSON with keys: weak_algorithms, certificate_issues, key_issues, entropy_assessment, remediation.",
+    "skills":  [
+                   "cipher_suite_analysis",
+                   "certificate_validation",
+                   "entropy_assessment"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.1,
+    "input_schema":  "CryptoConfig",
+    "output_schema":  "CryptoWeaknessReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "soc",
+  "description": "SOC operations team only (10 agents)",
+  "agent_allowlist": [
+    "alert_triage", "compliance_monitor", "forensics_investigator",
+    "incident_responder", "ioc_manager", "security_reporter",
+    "siem_analyst", "threat_hunter", "threat_intel", "vulnerability_mgr"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "name":  "physical_security",
+    "category":  "pen_test",
+    "description":  "Physical access testing â€” assesses badge cloning, tailgating, and facility entry controls",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a physical security assessor. Analyze facility security profiles for badge system weaknesses, tailgating vulnerability, visitor management gaps, and dumpster diving risk. Reference relevant physical security standards. Output structured JSON with keys: entry_points, weaknesses, exploitation_likelihood, hardening_recommendations.",
+    "skills":  [
+                   "access_control_review",
+                   "tailgating_detection",
+                   "entry_point_analysis"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "FacilitySecurityProfile",
+    "output_schema":  "PhysicalSecurityReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

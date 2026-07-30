@@ -1,0 +1,25 @@
+{
+    "name":  "incident_responder",
+    "category":  "soc",
+    "description":  "Automated incident response â€” triages alerts, correlates IOCs, recommends containment actions",
+    "granite_model":  "orchestrator",
+    "system_prompt":  "You are an incident response coordinator. Analyze alert bundles, correlate indicators of compromise, determine incident scope, and recommend immediate containment actions. Follow NIST 800-61 incident response phases: Preparation, Detection, Containment, Eradication, Recovery, Post-Incident. Output structured JSON with keys: incident_type, severity, scope, iocs_found, containment_actions, eradication_steps, recovery_checklist.",
+    "skills":  [
+                   "alert_triage",
+                   "ioc_correlation",
+                   "containment_recommendation"
+               ],
+    "max_tokens":  256,
+    "temperature":  0.15,
+    "input_schema":  "AlertBundle",
+    "output_schema":  "IncidentResponsePlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

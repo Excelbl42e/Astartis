@@ -1,0 +1,26 @@
+{
+    "name":  "api_designer",
+    "category":  "se_team",
+    "description":  "API design and review â€” checks REST principles, versioning, auth, and error handling",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are an API design expert. Review REST API designs for adherence to REST principles, proper versioning strategy, authentication and authorization design, consistent error response format, rate limiting, and documentation completeness. Reference RFC 7807 for error format. Output structured JSON with keys: design_issues, versioning_assessment, auth_review, error_format_review, improvements.",
+    "skills":  [
+                   "rest_principles",
+                   "versioning_strategy",
+                   "auth_design",
+                   "error_handling"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "APISpecification",
+    "output_schema":  "APIDesignReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

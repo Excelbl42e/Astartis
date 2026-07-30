@@ -1,0 +1,25 @@
+{
+    "name":  "web_app_tester",
+    "category":  "pen_test",
+    "description":  "OWASP Top 10 testing â€” identifies SQL injection, XSS, CSRF, auth bypass, and other web vulnerabilities",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a web application security tester specialized in OWASP Top 10. Analyze web app snapshots for injection flaws, broken authentication, XSS, CSRF, insecure direct object references, and misconfiguration. Reference OWASP category for each finding. Output structured JSON with keys: findings, owasp_categories, severity_ratings, remediation.",
+    "skills":  [
+                   "owasp_top10",
+                   "injection_detection",
+                   "auth_bypass_analysis"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "WebAppSnapshot",
+    "output_schema":  "WebVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

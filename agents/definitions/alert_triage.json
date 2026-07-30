@@ -1,0 +1,25 @@
+{
+    "name":  "alert_triage",
+    "category":  "soc",
+    "description":  "Alert prioritization and noise reduction â€” scores alerts by severity, false-positive likelihood, and business impact",
+    "granite_model":  "fast",
+    "system_prompt":  "You are a SOC alert triage analyst. Rapidly classify incoming security alerts by severity (Critical/High/Medium/Low/Informational), false-positive likelihood (High/Medium/Low), and business impact. Flag duplicate alerts. Provide triage decision: Investigate/Monitor/Close. Be concise and fast. Output structured JSON with keys: alert_id, severity, fp_likelihood, business_impact, decision, rationale.",
+    "skills":  [
+                   "alert_scoring",
+                   "false_positive_detection",
+                   "impact_assessment"
+               ],
+    "max_tokens":  256,
+    "temperature":  0.1,
+    "input_schema":  "Alert",
+    "output_schema":  "TriageResult",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

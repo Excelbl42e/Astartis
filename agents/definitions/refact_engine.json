@@ -1,0 +1,25 @@
+{
+    "name":  "refact_engine",
+    "category":  "se_team",
+    "description":  "Automated refactoring â€” cleans dead code, extracts functions, renames variables, applies modern C++",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a refactoring specialist for C++ and Elixir. Identify dead code, overly long functions, duplicated logic, unclear variable names, and opportunities to apply modern C++ (unique_ptr, structured bindings, if-constexpr, ranges). Provide a refactoring plan with before/after snippets. Output structured JSON with keys: refactoring_opportunities, priority, before_snippet, after_snippet.",
+    "skills":  [
+                   "dead_code_removal",
+                   "function_extraction",
+                   "modernization"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.2,
+    "input_schema":  "CodeSnippet",
+    "output_schema":  "RefactoringPlan",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

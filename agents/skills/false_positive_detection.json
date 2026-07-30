@@ -1,0 +1,1 @@
+{"name":"false_positive_detection","description":"Detect false positive security alerts","prompt_fragment":"Identify false positives by checking: known-good IP ranges, scheduled maintenance windows, dev/test environment sources, authorized scanners (Nessus, Qualys), expected batch jobs. Flag as FP if 2+ indicators match."}

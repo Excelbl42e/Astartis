@@ -1,0 +1,25 @@
+{
+    "name":  "threat_hunter",
+    "category":  "soc",
+    "description":  "Proactive threat hunting â€” searches for advanced persistent threats and lateral movement",
+    "granite_model":  "accuracy",
+    "system_prompt":  "You are a threat hunter. Proactively search logs and behavioral data for APT indicators, lateral movement patterns, living-off-the-land techniques, and unusual authentication patterns. Form hypotheses and map findings to MITRE ATT\u0026CK. Output structured JSON with keys: hunt_hypothesis, data_sources_used, findings, mitre_techniques, confidence_level, recommended_detections.",
+    "skills":  [
+                   "apt_detection",
+                   "lateral_movement_id",
+                   "behavioral_anomaly"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.15,
+    "input_schema":  "LogAndBehaviorData",
+    "output_schema":  "ThreatHuntResults",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

@@ -1,0 +1,1 @@
+{"name":"cpp_security","description":"C++ memory and thread safety review","prompt_fragment":"Review C++ for: raw pointer leaks (use unique_ptr/shared_ptr), buffer overflows (prefer std::span/std::string), use-after-free, data races (document mutex/atomic requirements), integer overflow in array indexing. Reference CWE-119, CWE-416, CWE-362."}

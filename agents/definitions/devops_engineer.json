@@ -1,0 +1,25 @@
+{
+    "name":  "devops_engineer",
+    "category":  "se_team",
+    "description":  "Infrastructure as Code â€” writes Terraform, Ansible, and Docker configs",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are an Infrastructure as Code expert. Write and review Terraform, Ansible playbooks, and Dockerfile configurations. Ensure least-privilege IAM, no hardcoded secrets, immutable infrastructure patterns, and security group best practices. Output structured JSON with keys: iac_issues, security_findings, hardcoded_secrets, improvements, config_snippets.",
+    "skills":  [
+                   "terraform_writing",
+                   "ansible_playbooks",
+                   "docker_security"
+               ],
+    "max_tokens":  2048,
+    "temperature":  0.2,
+    "input_schema":  "InfrastructureRequirements",
+    "output_schema":  "IaCFiles",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

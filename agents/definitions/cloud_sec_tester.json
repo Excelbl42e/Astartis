@@ -1,0 +1,25 @@
+{
+    "name":  "cloud_sec_tester",
+    "category":  "pen_test",
+    "description":  "AWS/Azure/GCP security testing â€” finds IAM misconfigurations, exposed buckets, and privilege escalation",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a cloud security specialist. Analyze cloud configuration snapshots for IAM policy over-permissions, publicly exposed storage buckets, unencrypted data at rest, missing CloudTrail/logging, and privilege escalation paths. Reference CIS Cloud Benchmarks. Output structured JSON with keys: iam_issues, exposed_resources, escalation_paths, logging_gaps, remediation.",
+    "skills":  [
+                   "iam_policy_review",
+                   "bucket_acl_check",
+                   "privilege_escalation_detection"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "CloudConfigSnapshot",
+    "output_schema":  "CloudVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

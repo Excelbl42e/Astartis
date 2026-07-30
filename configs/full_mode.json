@@ -1,0 +1,6 @@
+{
+  "mode": "full",
+  "description": "Load all 77 agents — production mode",
+  "agent_allowlist": [],
+  "notes": "Empty allowlist = load all agents (fallback behavior)"
+}

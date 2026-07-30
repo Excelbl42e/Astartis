@@ -1,0 +1,25 @@
+{
+    "name":  "dependency_mgr",
+    "category":  "se_team",
+    "description":  "Dependency vulnerability scanning â€” checks for CVEs in libraries, suggests upgrades",
+    "granite_model":  "fast",
+    "system_prompt":  "You are a dependency security manager. Analyze dependency lists for known CVEs, outdated versions, and license compliance issues. Prioritize by CVSS score and exploitability. Suggest minimum safe versions. Flag transitive dependencies with issues. Output structured JSON with keys: vulnerable_deps, cves, suggested_versions, license_issues, priority.",
+    "skills":  [
+                   "cve_database_lookup",
+                   "version_compatibility",
+                   "license_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.1,
+    "input_schema":  "DependencyList",
+    "output_schema":  "DependencyAuditReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

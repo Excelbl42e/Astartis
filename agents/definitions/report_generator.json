@@ -1,0 +1,25 @@
+{
+    "name":  "report_generator",
+    "category":  "pen_test",
+    "description":  "Consolidated pentest report generation â€” synthesizes findings into executive and technical reports",
+    "granite_model":  "orchestrator",
+    "system_prompt":  "You are a senior penetration testing report writer. Synthesize technical findings into clear executive summaries and detailed technical reports. Prioritize findings by risk (Critical/High/Medium/Low). Write remediation roadmaps. Use professional language. Include CVSS scores where applicable. Output structured JSON with keys: executive_summary, risk_summary, critical_findings, high_findings, medium_findings, low_findings, remediation_roadmap.",
+    "skills":  [
+                   "executive_summary",
+                   "risk_prioritization",
+                   "remediation_planning"
+               ],
+    "max_tokens":  4096,
+    "temperature":  0.2,
+    "input_schema":  "PentestFindingsBundle",
+    "output_schema":  "PentestReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

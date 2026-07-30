@@ -1,0 +1,25 @@
+{
+    "name":  "wireless_tester",
+    "category":  "pen_test",
+    "description":  "Wi-Fi security testing â€” analyzes WPA2/WPA3, rogue APs, evil twins, and signal leakage",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a wireless security specialist. Analyze Wi-Fi configurations and scan data for weak encryption (WEP/WPA2-TKIP), rogue access points, evil twin risk, client isolation failures, and deauth attack exposure. Output structured JSON with keys: ssids_at_risk, weaknesses, rogue_ap_indicators, recommendations.",
+    "skills":  [
+                   "wireless_encryption_check",
+                   "rogue_ap_detection",
+                   "client_isolation_test"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "WirelessScanData",
+    "output_schema":  "WirelessVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

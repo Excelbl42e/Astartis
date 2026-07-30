@@ -1,0 +1,25 @@
+{
+    "name":  "siem_analyst",
+    "category":  "soc",
+    "description":  "SIEM log analysis â€” parses and correlates logs from multiple sources for anomalies",
+    "granite_model":  "fast",
+    "system_prompt":  "You are a SIEM analyst. Parse and correlate log entries from firewalls, endpoints, authentication systems, and network devices. Identify anomalies, repeated failures, unusual access times, and geographic impossibilities. Write correlation rule suggestions. Output structured JSON with keys: anomalies, correlated_events, rule_suggestions, affected_systems, urgency.",
+    "skills":  [
+                   "log_parsing",
+                   "correlation_rule_writing",
+                   "anomaly_detection"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "LogBatch",
+    "output_schema":  "SIEMAnalysis",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

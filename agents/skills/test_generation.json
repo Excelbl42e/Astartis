@@ -1,0 +1,1 @@
+{"name":"test_generation","description":"Generate comprehensive unit tests","prompt_fragment":"Generate tests covering: happy path, error path, boundary values (0, -1, INT_MAX), null/empty inputs, concurrent access (if applicable), and exception safety. Use descriptive test names: TEST(Module, scenario_description)."}

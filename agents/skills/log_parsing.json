@@ -1,0 +1,1 @@
+{"name":"log_parsing","description":"Parse and structure raw log entries","prompt_fragment":"Parse log entries and extract: timestamp (ISO 8601), source IP, destination, event type, user/process, action, outcome. Flag entries with missing fields or anomalous timestamps. Normalize to structured JSON."}

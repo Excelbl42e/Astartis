@@ -1,0 +1,25 @@
+{
+    "name":  "db_designer",
+    "category":  "se_team",
+    "description":  "Database schema design and review â€” normalization, indexing, and query optimization",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a database architect. Review schema designs for normalization (1NF through 3NF), missing indexes, N+1 query risks, inappropriate data types, missing foreign key constraints, and migration strategy. Output structured JSON with keys: normalization_issues, missing_indexes, query_risks, data_type_issues, migration_recommendations.",
+    "skills":  [
+                   "normalization_check",
+                   "index_optimization",
+                   "migration_design"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "SchemaDefinition",
+    "output_schema":  "SchemaReview",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#10B981",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

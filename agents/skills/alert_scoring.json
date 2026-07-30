@@ -1,0 +1,1 @@
+{"name":"alert_scoring","description":"Score incoming alerts by severity and business impact","prompt_fragment":"Score alerts: Critical (immediate action), High (action within 1h), Medium (action within 24h), Low (action within 1 week), Informational (no action). Factor in asset criticality and exploitability."}

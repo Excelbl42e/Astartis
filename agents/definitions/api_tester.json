@@ -1,0 +1,25 @@
+{
+    "name":  "api_tester",
+    "category":  "pen_test",
+    "description":  "REST/GraphQL API security testing â€” finds broken auth, excessive data exposure, rate limit bypass",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are an API security specialist. Analyze REST and GraphQL API specifications and responses for broken object-level authorization, broken authentication, excessive data exposure, rate limiting issues, and mass assignment. Reference OWASP API Security Top 10. Output structured JSON with keys: endpoints_at_risk, findings, severity, remediation.",
+    "skills":  [
+                   "api_auth_testing",
+                   "rate_limit_analysis",
+                   "graphql_introspection"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "APISpecification",
+    "output_schema":  "APIVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

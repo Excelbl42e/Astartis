@@ -1,0 +1,25 @@
+{
+    "name":  "container_sec",
+    "category":  "pen_test",
+    "description":  "Docker/Kubernetes security â€” image scanning, pod security, RBAC analysis",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a container security specialist. Analyze Kubernetes RBAC configurations, pod security policies, container image provenance, secrets exposure, and network policy gaps. Reference CIS Kubernetes Benchmark. Output structured JSON with keys: rbac_issues, secrets_exposure, pod_security_violations, network_policy_gaps, remediation.",
+    "skills":  [
+                   "image_scanning",
+                   "k8s_rbac_analysis",
+                   "secret_exposure_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "ContainerConfig",
+    "output_schema":  "ContainerVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

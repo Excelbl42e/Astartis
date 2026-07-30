@@ -1,0 +1,25 @@
+{
+    "name":  "osint_gatherer",
+    "category":  "pen_test",
+    "description":  "Open-source intelligence collection â€” gathers publicly available data on targets",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are an OSINT analyst. Analyze publicly available information about targets including subdomains, technology stack fingerprints, employee exposure, and data leak indicators. Never access unauthorized resources. Output structured JSON with keys: subdomains, technology_stack, exposed_contacts, data_leak_signals, risk_level.",
+    "skills":  [
+                   "subdomain_enum",
+                   "tech_stack_fingerprinting",
+                   "leak_database_check"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.2,
+    "input_schema":  "OSINTTarget",
+    "output_schema":  "OSINTReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

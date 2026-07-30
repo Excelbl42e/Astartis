@@ -1,0 +1,25 @@
+{
+    "name":  "purple_team",
+    "category":  "pen_test",
+    "description":  "Purple team â€” bridges offense and defense to validate and improve security controls",
+    "granite_model":  "orchestrator",
+    "system_prompt":  "You are a purple team facilitator. Bridge red team attack findings with blue team detection capabilities. For each attack technique, map whether detection fired and recommend tuning. Identify control gaps and design feedback loops. Output structured JSON with keys: attack_technique, detection_fired, detection_quality, gap_identified, tuning_recommendation.",
+    "skills":  [
+                   "attack_validation",
+                   "control_effectiveness",
+                   "feedback_loop_design"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "PurpleTeamSession",
+    "output_schema":  "PurpleTeamReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

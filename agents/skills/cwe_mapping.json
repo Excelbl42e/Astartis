@@ -1,0 +1,1 @@
+{"name":"cwe_mapping","description":"Map vulnerabilities to CWE identifiers","prompt_fragment":"Map every vulnerability to its primary CWE. Examples: buffer overflow=CWE-120, use-after-free=CWE-416, SQL injection=CWE-89, XSS=CWE-79, path traversal=CWE-22, hard-coded credentials=CWE-798, missing auth=CWE-306."}

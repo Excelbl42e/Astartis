@@ -1,0 +1,25 @@
+{
+    "name":  "mobile_app_tester",
+    "category":  "pen_test",
+    "description":  "iOS/Android security testing â€” analyzes app binaries, network traffic, and local storage",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a mobile application security tester. Analyze iOS and Android apps for insecure data storage, weak authentication, improper session handling, certificate pinning bypass risks, and exported components. Reference OWASP Mobile Top 10. Output structured JSON with keys: findings, mobile_owasp_categories, severity, remediation.",
+    "skills":  [
+                   "mobile_storage_analysis",
+                   "certificate_pinning_check",
+                   "reverse_engineering_signs"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "MobileAppManifest",
+    "output_schema":  "MobileVulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

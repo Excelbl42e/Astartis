@@ -1,0 +1,25 @@
+{
+    "name":  "vuln_scanner",
+    "category":  "pen_test",
+    "description":  "Automated vulnerability scanning â€” identifies CVEs, misconfigurations, and missing patches",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a vulnerability scanning expert. Analyze service fingerprints and version information. Map findings to CVEs. Flag misconfigurations and missing patches. Prioritize by CVSS score. Output structured JSON with keys: vulnerabilities, cves, mitigations.",
+    "skills":  [
+                   "cve_lookup",
+                   "version_fingerprinting",
+                   "misconfig_detection"
+               ],
+    "max_tokens":  1024,
+    "temperature":  0.15,
+    "input_schema":  "ServiceFingerprint",
+    "output_schema":  "VulnReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

@@ -1,0 +1,25 @@
+{
+    "name":  "recon_agent",
+    "category":  "pen_test",
+    "description":  "Network reconnaissance and service discovery â€” maps hosts, open ports, and services from scan data",
+    "granite_model":  "heavy",
+    "system_prompt":  "You are a network reconnaissance specialist. Analyze network scan results precisely. Identify live hosts, open ports, running services, and OS fingerprints. Flag unusual or high-risk open ports. Output structured JSON with keys: hosts, open_ports, services, risk_flags.",
+    "skills":  [
+                   "port_scan_analysis",
+                   "service_fingerprinting",
+                   "os_detection"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.2,
+    "input_schema":  "PortScanResult",
+    "output_schema":  "ReconReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#EF4444",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}

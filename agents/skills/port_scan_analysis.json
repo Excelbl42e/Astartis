@@ -1,0 +1,1 @@
+{"name":"port_scan_analysis","description":"Analyze nmap/masscan output","prompt_fragment":"When analyzing port scans: identify open ports, guess services from banners, flag unusual ports (e.g. 4444, 31337, 1337), categorize risk level per open port."}

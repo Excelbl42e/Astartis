@@ -1,0 +1,25 @@
+{
+    "name":  "ioc_manager",
+    "category":  "soc",
+    "description":  "Indicator of Compromise management â€” tracks, validates, and expires IOCs",
+    "granite_model":  "fast",
+    "system_prompt":  "You are an IOC lifecycle manager. Validate incoming IOCs (IPs, hashes, domains, URLs) for quality and actionability. Check for false positive risk. Assign confidence scores. Flag IOCs nearing expiry. Recommend expiration timelines based on IOC type. Output structured JSON with keys: ioc_list, validated, confidence_scores, false_positive_risk, expiry_recommendations.",
+    "skills":  [
+                   "ioc_tracking",
+                   "threat_intel_validation",
+                   "false_positive_expiration"
+               ],
+    "max_tokens":  512,
+    "temperature":  0.1,
+    "input_schema":  "IOCList",
+    "output_schema":  "IOCManagementReport",
+    "ecc_compatible":  true,
+    "tools":  [
+
+              ],
+    "display_color":  "#3B82F6",
+    "mcp_servers":  [
+
+                    ],
+    "context_budget":  4096
+}
