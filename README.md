@@ -11,7 +11,7 @@ Security operations teams are overwhelmed. A typical SOC analyst handles dozens 
 
 Existing Security Information and Event Management (SIEM) tools aggregate data but still require a human to decide and act. AI-assisted tools still route decisions through cloud APIs, introducing latency, cost, data-sovereignty risk, and a single point of failure. Neither approach works for air-gapped or high-sensitivity environments.
 
-**Astartis** addresses this directly: It is and AI assisted Cyberdeck SUITE, fully offline SOC platform, which still keeps humans in the loop for destructive actions like, active immutabilty . It runs 77 specialised AI security agents on local IBM Granite models, makes real protective decisions (firewall blocks, file quarantine, deception deployment), and maintains a tamper-evident audit chain — all without a human in the loop for routine operations, and with a cryptographic multi-party approval gate for any irreversible action.
+**Astartis** addresses this directly: It is an AI assisted Cyberdeck SUITE, fully offline SOC platform, which still keeps humans in the loop for destructive actions like, active immutabilty . It runs 77 specialised AI security agents on local IBM Granite models, makes real protective decisions (firewall blocks, file quarantine, deception deployment), and maintains a tamper-evident audit chain — all without a human in the loop for routine operations, and with a cryptographic multi-party approval gate for any irreversible action.
 
 The intended user is a security team that needs faster triage, audit-ready compliance evidence, and autonomous first-response on a Windows endpoint or server — without sending data to a cloud API.
 
