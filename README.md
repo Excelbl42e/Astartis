@@ -9,9 +9,9 @@
 
 Security operations teams are overwhelmed. A typical SOC analyst handles dozens of alerts per shift, each requiring log correlation, threat classification, response decision, and compliance documentation. At current staffing levels, most organisations take **hours to days** to triage a critical alert — and every minute of that gap is exposure time.
 
-Existing SIEM tools aggregate data but still require a human to decide and act. AI-assisted tools still route decisions through cloud APIs, introducing latency, cost, data-sovereignty risk, and a single point of failure. Neither approach works for air-gapped or high-sensitivity environments.
+Existing Security Information and Event Management (SIEM) tools aggregate data but still require a human to decide and act. AI-assisted tools still route decisions through cloud APIs, introducing latency, cost, data-sovereignty risk, and a single point of failure. Neither approach works for air-gapped or high-sensitivity environments.
 
-**Astartis** addresses this directly: a fully autonomous, fully offline SOC platform that runs 77 specialised AI security agents on local IBM Granite models, makes real protective decisions (firewall blocks, file quarantine, deception deployment), and maintains a tamper-evident audit chain — all without a human in the loop for routine operations, and with a cryptographic multi-party approval gate for any irreversible action.
+**Astartis** addresses this directly: It is and AI assisted Cyberdeck SUITE, fully offline SOC platform, which still keeps humans in the loop for destructive actions like, active immutabilty . It runs 77 specialised AI security agents on local IBM Granite models, makes real protective decisions (firewall blocks, file quarantine, deception deployment), and maintains a tamper-evident audit chain — all without a human in the loop for routine operations, and with a cryptographic multi-party approval gate for any irreversible action.
 
 The intended user is a security team that needs faster triage, audit-ready compliance evidence, and autonomous first-response on a Windows endpoint or server — without sending data to a cloud API.
 
